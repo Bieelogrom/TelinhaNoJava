@@ -24,6 +24,7 @@ import javax.swing.text.MaskFormatter;
 public class FormRegistro extends JFrame{
 	
 	public static Aluno aluno;
+	Color fundoSplash = Color.decode("#fb8500");
 	JLabel lbNome,lbDataNasc,lbCpf, lbAnoSerie, lbContato, lbPreferencia;
 	JTextField txNome, txEmail;
 	JFormattedTextField txDataNasc, txCpf, txTelefone,txWhatsApp;
@@ -35,7 +36,7 @@ public class FormRegistro extends JFrame{
 	
 	
 	public FormRegistro() throws ParseException {
-		this.getContentPane().setBackground(Color.BLUE);
+		this.getContentPane().setBackground(fundoSplash);
 		this.setTitle("Aluno");
 		this.setSize(500,600);
 		this.setLocationRelativeTo(null);
