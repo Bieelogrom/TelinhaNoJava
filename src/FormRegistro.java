@@ -2,6 +2,7 @@
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.ParseException;
@@ -37,7 +38,7 @@ public class FormRegistro extends JFrame{
 	
 	public FormRegistro() throws ParseException {
 		this.getContentPane().setBackground(fundoSplash);
-		this.setTitle("Aluno");
+		this.setTitle("Cadastro da NBA");
 		this.setSize(500,600);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);		
@@ -49,6 +50,8 @@ public class FormRegistro extends JFrame{
 		MaskFormatter mascaraFone = new MaskFormatter("(##)#####-####");
 		
 		lbNome = new JLabel();
+		lbNome.setFont(new Font("Arial", Font.BOLD, 14));
+		lbNome.setForeground(Color.WHITE);
 		lbNome.setText("Nome");
 		lbNome.setBounds(50,50,100,30);
 		c.add(lbNome);
@@ -58,68 +61,79 @@ public class FormRegistro extends JFrame{
 		c.add(txNome);
 		
 		lbDataNasc = new JLabel();
-		lbDataNasc.setText("Data");
+		lbDataNasc.setFont(new Font("Arial", Font.BOLD, 14));
+		lbDataNasc.setForeground(Color.WHITE);
+		lbDataNasc.setText("Data do Draft");
 		lbDataNasc.setBounds(50,90,100,30);
 		c.add(lbDataNasc);
 				
 		txDataNasc = new JFormattedTextField(mascaraData);
-		txDataNasc.setBounds(100, 90, 200, 30);
+		txDataNasc.setBounds(145, 90, 75, 30);
 		c.add(txDataNasc);
 		
 		lbCpf = new JLabel();
+		lbCpf.setFont(new Font("Arial", Font.BOLD, 14));
+		lbCpf.setForeground(Color.WHITE);
 		lbCpf.setText("CPF");
 		lbCpf.setBounds(50,130,100,30);
 		c.add(lbCpf);
 		
 		txCpf = new JFormattedTextField(mascaraCpf);
-		txCpf.setBounds(100, 130, 200, 30);
+		txCpf.setBounds(100, 130, 100, 30);
 		c.add(txCpf);
 		
 		lbAnoSerie = new JLabel();
-		lbAnoSerie.setText("Série");
+		lbAnoSerie.setFont(new Font("Arial", Font.BOLD, 14));
+		lbAnoSerie.setForeground(Color.WHITE);
+		lbAnoSerie.setText("Time");
 		lbAnoSerie.setBounds(50,170,100,30);
 		c.add(lbAnoSerie);
 		
 		cbAnoSerie = new JComboBox();
+		cbAnoSerie.setFont(new Font("Arial", Font.BOLD, 14));
 		cbAnoSerie.setBounds(100, 170, 100, 30);
-		cbAnoSerie.addItem("1a Série EM");
-		cbAnoSerie.addItem("2a Série EM");
-		cbAnoSerie.addItem("3a Série EM");
+		cbAnoSerie.addItem("Armador");
+		cbAnoSerie.addItem("Ala-Armador");
+		cbAnoSerie.addItem("Ala");
+		cbAnoSerie.addItem("Ala-Pivô");
+		cbAnoSerie.addItem("Pivô");
 		c.add(cbAnoSerie);
 		
 		lbContato = new JLabel();
+		lbContato.setFont(new Font("Arial", Font.BOLD, 14));
+		lbContato.setForeground(Color.WHITE);
 		lbContato.setText("Contato");
 		lbContato.setBounds(50,210,100,30);
 		c.add(lbContato);
 		
 		txEmail = new JTextField();
-		txEmail.setBounds(100, 210, 100, 30);
+		txEmail.setBounds(110, 210, 100, 30);
 		txEmail.setVisible(true);
 		c.add(txEmail);
 		
 		txTelefone = new JFormattedTextField(mascaraFone);
-		txTelefone.setBounds(200, 210, 100, 30);
+		txTelefone.setBounds(210, 210, 100, 30);
 		txTelefone.setVisible(true);
 		c.add(txTelefone);
 		
 		txWhatsApp = new JFormattedTextField(mascaraFone);
-		txWhatsApp.setBounds(300, 210, 100, 30);
+		txWhatsApp.setBounds(310, 210, 100, 30);
 		txWhatsApp.setVisible(true);
 		c.add(txWhatsApp);
 		
 		rbEmail = new JRadioButton();
 		rbEmail.setText("E-mail");
-		rbEmail.setBounds(100, 240, 100, 30);
+		rbEmail.setBounds(110, 240, 100, 30);
 		c.add(rbEmail);
 		
 		rbTelefone = new JRadioButton();
 		rbTelefone.setText("Telefone");
-		rbTelefone.setBounds(200, 240, 100, 30);
+		rbTelefone.setBounds(210, 240, 100, 30);
 		c.add(rbTelefone);
 		
 		rbWhatsApp = new JRadioButton();
 		rbWhatsApp.setText("WhatsApp");
-		rbWhatsApp.setBounds(300, 240, 100, 30);
+		rbWhatsApp.setBounds(310, 240, 100, 30);
 		c.add(rbWhatsApp);
 		
 		grupoContato = new ButtonGroup();
@@ -128,22 +142,24 @@ public class FormRegistro extends JFrame{
 		grupoContato.add(rbWhatsApp);
 		
 		lbPreferencia = new JLabel();
-		lbPreferencia.setText("Quais temas são de sua preferência?");
+		lbPreferencia.setFont(new Font("Arial", Font.BOLD, 14));
+		lbPreferencia.setForeground(Color.WHITE);
+		lbPreferencia.setText("Quais times são do seu interesse?");
 		lbPreferencia.setBounds(50, 275, 300, 30);
 		c.add(lbPreferencia);
 		
 		ckMusica = new JCheckBox();
-		ckMusica.setText("Músicas");
-		ckMusica.setBounds(100, 300, 100, 30);
+		ckMusica.setText("San Antonio Spurs");
+		ckMusica.setBounds(100, 300, 200, 30);
 		c.add(ckMusica);
 		
 		ckFilmes = new JCheckBox();
-		ckFilmes.setText("Filmes");
-		ckFilmes.setBounds(100, 325, 100, 30);
+		ckFilmes.setText("Charlotte Hornets");
+		ckFilmes.setBounds(100, 325, 200, 30);
 		c.add(ckFilmes);
 		
 		ckConhecimentosGerais = new JCheckBox();
-		ckConhecimentosGerais.setText("Conhecimentos Gerais");
+		ckConhecimentosGerais.setText("Portland Trail Blazers");
 		ckConhecimentosGerais.setBounds(100, 350, 200, 30);
 		c.add(ckConhecimentosGerais);
 					
